@@ -3,7 +3,7 @@ import { useState } from "react";
 const Search = ({setSearch,setCategory}) => {
 
     const [inputSearch,setInputSearch] = useState("");
-    const [selectedCategory,setSelectedCategory] = useState("movies");
+    const [selectedCategory,setSelectedCategory] = useState("movie");
 
     function submit(){
         setSearch(inputSearch);
@@ -13,7 +13,7 @@ const Search = ({setSearch,setCategory}) => {
     return ( 
         <div className="search">
             <select onChange={(e) => setSelectedCategory(e.target.value)}>
-                <option selected="selected" value="movies">Movies</option>
+                <option selected="selected" value="movie">Movies</option>
                 <option value="series">Series</option>
             </select>
             <div>
