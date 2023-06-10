@@ -4,13 +4,14 @@ const MoviesList = (data) => {
     if(movies.Response==='False'){
         return(
             <div>
-                <h3>Could not find any results</h3>
+                <h3>Search Results (0)</h3>
             </div>
         )
     }
     
     return ( 
         <div>
+            <h3>Search Results ({movies.Search.length})</h3>
             {movies.Search.map(movie => (
                 <div className="movies-list" key={movie.imdbID}>
                     <div className="movie-preview"  key={movie.imdbID}>
