@@ -3,16 +3,16 @@ import { useState } from "react";
 const Search = ({setSearch,setCategory}) => {
 
     const [inputSearch,setInputSearch] = useState("");
-    const [selectedCategory,setSelectedCategory] = useState("movie");
+    // const [selectedCategory,setSelectedCategory] = useState("movie");
 
     function submit(){
         setSearch(inputSearch);
-        setCategory(selectedCategory);
+        //setCategory(selectedCategory);
     }
 
     return ( 
         <div className="search">
-            <select onChange={(e) => setSelectedCategory(e.target.value)}>
+            <select onChange={(e) => setCategory(e.target.value)}>
                 <option selected="selected" value="movie">Movies</option>
                 <option value="series">Series</option>
             </select>

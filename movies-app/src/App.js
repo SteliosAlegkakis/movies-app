@@ -6,7 +6,7 @@ import { useState } from 'react';
 function App() {
 
   const [search,setSearch] = useState("");
-  const [category,setCategory] = useState("movies");
+  const [category,setCategory] = useState("movie");
 
   return (
     <div className="App">
