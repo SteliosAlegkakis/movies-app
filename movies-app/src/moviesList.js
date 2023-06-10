@@ -1,7 +1,12 @@
+import { useState } from "react";
+
 const MoviesList = (data) => {
     
-    const movies = data.movies;
-    if(movies.Response==='False'){
+    data = data.movies;
+    let movies = data.Search;
+    const [sort,setSort] = useState("year");
+
+    if(data.Response==='False'){
         return(
             <div className="results-number">
                 <h3>Search Results (0)</h3>
@@ -9,16 +14,35 @@ const MoviesList = (data) => {
         )
     }
     
+    function handleSort(sort){
+        console.log(sort);
+        if(sort==="year"){
+            movies = movies.sort((a, b) => {
+                if (a.Year > b.Year) {
+                  return -1;
+                }
+            });
+        }
+        else{
+            movies = movies.sort((a, b) => {
+                return a.Title.localeCompare(b.Title, undefined, { numeric: true })
+            });
+        }
+        console.log(movies);
+    }
+
+    handleSort(sort);
+
     return ( 
         <div>
             <div className="results-sort">
-                <h3 className="results-number">Search Results ({movies.Search.length})</h3>
-                <select>
-                    <option>Year</option>
-                    <option>A-Z</option>
+                <h3 className="results-number">Search Results ({movies.length})</h3>
+                <select onChange={(e) => setSort(e.target.value)}>
+                    <option selected="selected" value="year">Year</option>
+                    <option value="a-z">A-Z</option>
                 </select>
             </div>
-            {movies.Search.map(movie => (
+            {movies.map(movie => (
                 <div className="movies-list" key={movie.imdbID}>
                     <div className="movie-preview"  key={movie.imdbID}>
                         <img src={movie.Poster} alt='Poster Not Found'></img>
