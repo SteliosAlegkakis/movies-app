@@ -16,7 +16,6 @@ const MoviesList = (data) => {
     }
     
     function handleSort(sort){
-        console.log(sort);
         if(sort==="year"){
             movies = movies.sort((a, b) => {
                 if (a.Year > b.Year) {
@@ -29,7 +28,6 @@ const MoviesList = (data) => {
                 return a.Title.localeCompare(b.Title, undefined, { numeric: true })
             });
         }
-        console.log(movies);
     }
 
     handleSort(sort);

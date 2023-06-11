@@ -7,7 +7,6 @@ const ItemDetails = () => {
     const imdbID = useParams().imdbID;
     let history = useHistory();
     const {data: item, isPending, error} = useFetch('http://www.omdbapi.com/?i='+imdbID+'&plot=full&apikey=ff202fc9');
-    console.log(item);
 
     return ( 
         <div>
