@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const MoviesList = (data) => {
     
@@ -34,7 +35,7 @@ const MoviesList = (data) => {
     handleSort(sort);
 
     return ( 
-        <div>
+        <div className="results">
             <div className="results-sort">
                 <h3 className="results-number">Search Results ({movies.length})</h3>
                 <select onChange={(e) => setSort(e.target.value)}>
@@ -42,17 +43,19 @@ const MoviesList = (data) => {
                     <option value="a-z">A-Z</option>
                 </select>
             </div>
-            {movies.map(movie => (
-                <div className="movies-list" key={movie.imdbID}>
+            <div className="movies-list">
+                {movies.map(movie => (
                     <div className="movie-preview"  key={movie.imdbID}>
-                        <img src={movie.Poster} alt='Poster Not Found'></img>
-                        <div>
-                            <h3>{movie.Title}</h3>
-                            <p>{movie.Year}</p>
-                        </div>    
+                            <img src={movie.Poster} alt='Poster Not Found'></img>
+                            <div>
+                                <Link to={`/ItemDetails/${movie.imdbID}`}>
+                                <h3>{movie.Title}</h3>
+                                <p>{movie.Year}</p>
+                                </Link>
+                            </div>     
                     </div>
-                </div>
-            ))}
+                ))}
+            </div>
         </div>
      );
 }

@@ -3,6 +3,7 @@ import Search from "./search";
 import Results from "./results";
 import { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import ItemDetails from './itemDetails';
 
 function App() {
 
@@ -16,6 +17,9 @@ function App() {
           <Route exact path="/">
             <Search setSearch={setSearch} setCategory={setCategory}></Search>
             <Results search={search} category={category}></Results>
+          </Route>
+          <Route path="/ItemDetails/:imdbID">
+            <ItemDetails></ItemDetails>
           </Route>
         </Switch>
       </div>
