@@ -1,4 +1,17 @@
-# Getting Started with Create React App
+# Clone and run project
+
+First make sure you have installed react on your machine.
+Then open your terminal and navigate to the directory you want the project to be cloned. Type:
+### git clone `https://github.com/SteliosAlegkakis/movies-app.git`
+Then navigate to the root folder that contains all the project's files and type the commands:
+### `npm install`
+To install all the modules for the project
+### `npm run start`
+To run the project.
+
+
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
