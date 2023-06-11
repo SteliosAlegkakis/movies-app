@@ -2,7 +2,7 @@
 
 First make sure you have installed react on your machine.
 Then open your terminal and navigate to the directory you want the project to be cloned. Type:
-### git clone `https://github.com/SteliosAlegkakis/movies-app.git`
+### `git clone https://github.com/SteliosAlegkakis/movies-app.git`
 Then navigate to the root folder that contains all the project's files and type the commands:
 ### `npm install`
 To install all the modules for the project
