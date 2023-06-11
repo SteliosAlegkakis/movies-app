@@ -217,4 +217,31 @@ a{
             width: 20%;
             height: 20%;
         }
+
+        .itemDetails{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* .itemDetails button{
+            position: relative;
+        } */
+
+        .itemDetails img{
+            position: relative;
+            width: 40%;
+            height: 40%;
+        }
+
+        .itemDetails .info{
+            position: relative;
+            width: 40%;
+        
+        }
+
+        .itemDetails .info .header{
+            position: relative;
+        }
 }
