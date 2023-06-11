@@ -49,8 +49,8 @@ const MoviesList = (data) => {
                             <img src={movie.Poster} alt='Poster Not Found'></img>
                             <div>
                                 <Link to={`/ItemDetails/${movie.imdbID}`}>
-                                <h3>{movie.Title}</h3>
-                                <p>{movie.Year}</p>
+                                    <h3>{movie.Title}</h3>
+                                    <p>{movie.Year}</p>
                                 </Link>
                             </div>     
                     </div>

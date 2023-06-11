@@ -2,12 +2,11 @@ import { useState } from "react";
 
 const Search = ({setSearch,setCategory}) => {
 
-    const [inputSearch,setInputSearch] = useState("");
-    // const [selectedCategory,setSelectedCategory] = useState("movie");
+    const [inputSearch,setInputSearch] = useState(localStorage.getItem('search'));
 
     function submit(){
         setSearch(inputSearch);
-        //setCategory(selectedCategory);
+        localStorage.setItem('search',inputSearch);
     }
 
     return ( 
